@@ -1,13 +1,23 @@
+/* ---------------- GLOBAL RESET ---------------- */
+
 *{
+  margin:0;
+  padding:0;
   box-sizing:border-box;
 }
 
-body{
-  margin:0;
-  font-family:'Comic Sans MS', cursive;
+html, body, #root{
+  height:100%;
+  width:100%;
 }
 
-/* FULL SCREEN */
+body{
+  font-family: 'Poppins', sans-serif;
+  overflow:hidden;
+}
+
+
+/* ---------------- DREAMY BACKGROUND ---------------- */
 
 .app{
   height:100vh;
@@ -15,84 +25,179 @@ body{
   justify-content:center;
   align-items:center;
 
-  background: linear-gradient(-45deg,
-  #ff9a9e,
-  #fad0c4,
-  #ffdde1,
-  #fbc2eb);
+  background: linear-gradient(
+    -45deg,
+    #ffd6e0,
+    #ffe5ec,
+    #fff0f5,
+    #e0c3fc
+  );
 
   background-size:400% 400%;
-  animation: gradientMove 10s ease infinite;
+  animation: romanticGradient 14s ease infinite;
 }
 
-@keyframes gradientMove{
+@keyframes romanticGradient{
   0%{background-position:0% 50%;}
   50%{background-position:100% 50%;}
   100%{background-position:0% 50%;}
 }
 
-/* CARD */
+
+/* ---------------- GLASS LOVE CARD ---------------- */
 
 .card{
-  width:420px;
-  padding:40px;
-  border-radius:28px;
+  width:440px;
+  padding:38px;
+
+  border-radius:32px;
+
   text-align:center;
 
-  backdrop-filter: blur(16px);
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 
-  box-shadow:0 25px 60px rgba(0,0,0,0.2);
+  box-shadow:
+    0 30px 80px rgba(255, 105, 135, 0.25);
+
+  position:relative;
+
+  animation: floatCard 4s ease-in-out infinite;
 }
+
+/* gentle floating effect */
+
+@keyframes floatCard{
+  0%,100%{ transform: translateY(0);}
+  50%{ transform: translateY(-8px);}
+}
+
+
+/* ---------------- CAT IMAGE ---------------- */
 
 .cat{
-  width:180px;
+  width:190px;
+  border-radius:18px;
+
+  margin-bottom:14px;
+
+  box-shadow:
+    0 12px 30px rgba(255,105,135,.25);
 }
+
+
+/* ---------------- ROMANTIC TEXT ---------------- */
 
 h2{
   color:#ff4d6d;
+  font-weight:600;
+
+  line-height:1.4;
+  letter-spacing:.4px;
+
+  margin-bottom:6px;
 }
 
-/* BUTTON AREA — IMPORTANT */
+
+/* ---------------- BUTTON ARENA ---------------- */
 
 .buttons{
-  margin-top:30px;
-  height:140px;
+  margin-top:28px;
+  height:180px;
+
   position:relative;
-  overflow:hidden; /* prevents visual escape */
+  overflow:hidden;
 }
 
-/* shared */
+
+/* ---------------- SHARED BUTTON ---------------- */
 
 button{
   border:none;
-  padding:14px 26px;
+  padding:14px 30px;
   font-size:18px;
-  border-radius:14px;
+  border-radius:999px;
+
   cursor:pointer;
+
+  user-select:none;
 }
 
-/* YES */
+
+/* ---------------- YES BUTTON (STAR) ---------------- */
 
 .yes{
-  background:#ff4d6d;
+  position:absolute;
+  left:50%;
+  top:18px;
+  transform:translateX(-50%);
+
+  background: linear-gradient(
+    135deg,
+    #ff4d6d,
+    #ff758f
+  );
+
   color:white;
-  transition: transform .25s;
-  box-shadow:0 6px 18px rgba(255,77,109,.4);
+  font-weight:600;
+
+  box-shadow:
+    0 10px 35px rgba(255,77,109,.45);
+
+  transition: all .28s ease;
 }
 
-/* NO */
+/* Magnetic attraction feel */
+
+.yes:hover{
+  transform:translateX(-50%) scale(1.12);
+
+  box-shadow:
+    0 18px 45px rgba(255,77,109,.65);
+}
+
+
+/* soft heartbeat glow */
+
+.yes::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  border-radius:inherit;
+
+  box-shadow:0 0 30px rgba(255,77,109,.6);
+  opacity:.6;
+
+  animation: heartbeat 1.6s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{opacity:.4;}
+  50%{opacity:.9;}
+}
+
+
+/* ---------------- NO BUTTON ---------------- */
 
 .no{
   position:absolute;
-  background:#ffd6e0;
-  color:#ff4d6d;
 
-  transition:none;
-  will-change: left, top;
+  background:#ffe5ec;
+  color:#ff4d6d;
+  font-weight:600;
+
+  box-shadow:
+    0 6px 18px rgba(255,105,135,.25);
+
+  transition:none; /* CRITICAL FOR TELEPORT */
+
+  will-change:left, top;
 }
 
-/* celebration */
+
+/* ---------------- CELEBRATION SCREEN ---------------- */
 
 .celebration{
   height:100vh;
@@ -101,23 +206,49 @@ button{
   justify-content:center;
   align-items:center;
 
-  background: radial-gradient(#ffdde1,#ee9ca7);
+  background: radial-gradient(
+    circle at center,
+    #ffd6e0,
+    #ff8fab
+  );
 }
 
 .kiss{
   width:320px;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 20px 60px rgba(255,105,135,.4);
+
+  margin-bottom:20px;
 }
 
 .celebration h1{
   color:white;
-  font-size:42px;
-}
-*{
-  margin:0;
-  padding:0;
+  font-size:44px;
+  letter-spacing:1px;
+
+  text-shadow:
+    0 6px 20px rgba(255,255,255,.5);
 }
 
-html, body, #root{
-  width:100%;
-  height:100%;
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:500px){
+
+  .card{
+    width:90%;
+    padding:28px;
+  }
+
+  .cat{
+    width:150px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+
 }
