@@ -1,0 +1,123 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+}
+
+/* FULL SCREEN */
+
+.app{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background: linear-gradient(-45deg,
+  #ff9a9e,
+  #fad0c4,
+  #ffdde1,
+  #fbc2eb);
+
+  background-size:400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* CARD */
+
+.card{
+  width:420px;
+  padding:40px;
+  border-radius:28px;
+  text-align:center;
+
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.25);
+
+  box-shadow:0 25px 60px rgba(0,0,0,0.2);
+}
+
+.cat{
+  width:180px;
+}
+
+h2{
+  color:#ff4d6d;
+}
+
+/* BUTTON AREA — IMPORTANT */
+
+.buttons{
+  margin-top:30px;
+  height:140px;
+  position:relative;
+  overflow:hidden; /* prevents visual escape */
+}
+
+/* shared */
+
+button{
+  border:none;
+  padding:14px 26px;
+  font-size:18px;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+/* YES */
+
+.yes{
+  background:#ff4d6d;
+  color:white;
+  transition: transform .25s;
+  box-shadow:0 6px 18px rgba(255,77,109,.4);
+}
+
+/* NO */
+
+.no{
+  position:absolute;
+  background:#ffd6e0;
+  color:#ff4d6d;
+
+  transition:none;
+  will-change: left, top;
+}
+
+/* celebration */
+
+.celebration{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background: radial-gradient(#ffdde1,#ee9ca7);
+}
+
+.kiss{
+  width:320px;
+}
+
+.celebration h1{
+  color:white;
+  font-size:42px;
+}
+*{
+  margin:0;
+  padding:0;
+}
+
+html, body, #root{
+  width:100%;
+  height:100%;
+}
